@@ -1,0 +1,28 @@
+.content {
+  width: 20%;
+  margin: auto;
+  padding-top: 15%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginRegisetrSwitch {
+  text-align: center;
+  margin-top: 10%;
+  color: gray;
+}
+
+@media only screen and (max-width: 1200px) {
+  .content {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    width: 80%;
+  }
+}

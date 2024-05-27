@@ -1,0 +1,24 @@
+<div class="menu">
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="goToDashboard()">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </button>
+
+    <button mat-menu-item (click)="goToMuseums()">
+      <mat-icon>museum</mat-icon>
+      <span>Museums</span>
+    </button>
+    <button mat-menu-item (click)="goToLogs()">
+      <mat-icon>calendar_view_day</mat-icon>
+      <span>Logs</span>
+    </button>
+    <button mat-menu-item (click)="goToCRUD()">
+      <mat-icon>admin_panel_settings</mat-icon>
+      <span>CRUD</span>
+    </button>
+  </mat-menu>
+</div>

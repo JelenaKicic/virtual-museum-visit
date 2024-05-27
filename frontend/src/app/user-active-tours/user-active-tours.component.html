@@ -1,0 +1,29 @@
+<app-user-menu></app-user-menu>
+<div class="content">
+  <div class="tour" *ngFor="let tour of tours">
+    <h1>Tour {{ tour.id }}</h1>
+    <video *ngIf="tour.isYt == false" width="500" height="300" controls>
+      <source src="{{ tour.video }}" type="video/mp4" />
+    </video>
+
+    <iframe
+      width="500"
+      height="300"
+      src="{{ tour.safeUrl }}"
+      frameborder="0"
+      *ngIf="tour.isYt == true"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      target="_parent"
+      webkitallowfullscreen
+      mozallowfullscreen
+      allowfullscreen
+    ></iframe>
+    <div class="imageRow">
+      <img
+        class="image"
+        *ngFor="let image of tour.images"
+        src="{{ image.image }}"
+      />
+    </div>
+  </div>
+</div>

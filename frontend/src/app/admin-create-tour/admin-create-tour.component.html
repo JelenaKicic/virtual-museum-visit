@@ -1,0 +1,56 @@
+<app-admin-menu></app-admin-menu>
+<div class="content">
+  <form [formGroup]="createTourForm" class="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Start date</mat-label>
+      <input matInput formControlName="startDate" type="date" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Start time</mat-label>
+      <input matInput formControlName="startTime" type="time" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Length</mat-label>
+      <input matInput formControlName="length" type="number" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Video</mat-label>
+      <input matInput formControlName="video" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput formControlName="price" type="number" />
+    </mat-form-field>
+
+    Upload tour files:
+    <input
+      type="file"
+      class="file-input"
+      (change)="onFileSelected($event)"
+      #fileUpload
+      multiple
+      accept="video/mp4, image/jpg, image/jpeg"
+    />
+    <div class="file-upload">
+      {{ numOfUploadedFiles || "No" }} files uploaded
+      <button
+        mat-mini-fab
+        color="primary"
+        class="upload-btn"
+        (click)="fileUpload.click()"
+      >
+        <mat-icon>attach_file</mat-icon>
+      </button>
+    </div>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="onSubmit(createTourForm)"
+      [disabled]="createTourForm.invalid"
+    >
+      Add Tour
+    </button>
+  </form>
+</div>

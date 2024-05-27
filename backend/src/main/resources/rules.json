@@ -1,0 +1,110 @@
+{
+  "rules": [
+    {
+      "methods": ["GET"],
+      "pattern": "/users",
+      "roles": ["ADMIN"]
+    },
+    {
+      "methods": ["PUT"],
+      "pattern": "/users/**/status/**",
+      "roles": ["ADMIN"]
+    },
+    {
+      "methods": ["PUT"],
+      "pattern": "/users/**/reset-password",
+      "roles": ["ADMIN"]
+    },
+    {
+      "methods": ["GET"],
+      "pattern": "/users/count/**",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": ["POST"],
+      "pattern": "/museums",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": ["GET"],
+      "pattern": "/museums",
+      "roles": [
+        "ADMIN", "USER"
+      ]
+    },
+    {
+      "methods": ["GET"],
+      "pattern": "/museums/**",
+      "roles": [
+        "ADMIN", "USER"
+      ]
+    },
+    {
+      "methods": ["POST"],
+      "pattern": "/museums/**/tours",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": ["POST"],
+      "pattern": "/tours/**/museums/**",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": ["POST"],
+      "pattern": "/tours/**/upload-files",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": ["GET"],
+      "pattern": "/tours/**",
+      "roles": [
+        "ADMIN", "USER"
+      ]
+    },
+    {
+      "methods": ["GET"],
+      "pattern": "/tours/**/museums/**",
+      "roles": [
+        "ADMIN", "USER"
+      ]
+    },
+    {
+      "methods": ["POST"],
+      "pattern": "/tours/**/buy",
+      "roles": [
+        "USER"
+      ]
+    },
+    {
+      "methods": ["GET"],
+      "pattern": "/tours_active",
+      "roles": [
+        "USER"
+      ]
+    },
+    {
+      "methods": ["GET"],
+      "pattern": "/logs/**",
+      "roles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "methods": ["GET"],
+      "pattern": "/logs",
+      "roles": [
+        "ADMIN"
+      ]
+    }
+  ]
+}

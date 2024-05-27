@@ -1,0 +1,53 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  padding-top: 10%;
+  padding-bottom: 15%;
+}
+
+.tour {
+  margin-bottom: 10%;
+}
+
+.imageRow {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+.image {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 1200px) {
+  .content {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .imageRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .content {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    width: 95%;
+  }
+}

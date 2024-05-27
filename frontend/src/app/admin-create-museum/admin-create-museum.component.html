@@ -1,0 +1,77 @@
+<app-admin-menu></app-admin-menu>
+<div class="content">
+  <form [formGroup]="createMuseumForm" class="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <input matInput formControlName="type" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Phone number</mat-label>
+      <input matInput formControlName="phoneNumber" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Country</mat-label>
+      <mat-select
+        formControlName="country"
+        (selectionChange)="loadRegions($event.value.cca2)"
+      >
+        <mat-option *ngFor="let country of countries" [value]="country">
+          {{ country.name.official }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Country region</mat-label>
+      <mat-select
+        formControlName="region"
+        (selectionChange)="loadCities($event.value.region)"
+      >
+        <mat-option *ngFor="let region of regions" [value]="region">
+          {{ region.region }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>City</mat-label>
+      <mat-select
+        formControlName="city"
+        (selectionChange)="
+          setCoordinates($event.value.latitude, $event.value.longitude)
+        "
+      >
+        <mat-option *ngFor="let city of cities" [value]="city">
+          {{ city.city }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Longitude</mat-label>
+      <input matInput type="number" formControlName="longitude" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Latitude</mat-label>
+      <input matInput type="number" formControlName="latitude" />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="onSubmit(createMuseumForm)"
+      [disabled]="createMuseumForm.invalid"
+    >
+      Add Museum
+    </button>
+  </form>
+</div>

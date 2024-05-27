@@ -1,0 +1,16 @@
+<div class="menu">
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="goToDashboard()">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </button>
+
+    <button mat-menu-item (click)="goToActiveTours()">
+      <mat-icon>tour</mat-icon>
+      <span>My active tours</span>
+    </button>
+  </mat-menu>
+</div>
